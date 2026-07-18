@@ -1,0 +1,262 @@
+/* -------- universal -------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Vidaloka", serif;
+}
+
+.vidaloka-regular {
+    font-family: "Vidaloka", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+:root {
+    --color-accent: #7995ba;
+    --color-accent-hover: #72849d;
+    --color-overlay: rgba(55, 45, 40, 0.45);
+    --color-overlay-strong: rgba(66, 39, 26, 0.4);
+    --color-bg: #2b211d;
+    --color-text: white;
+}
+
+body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    min-height: 100vh;
+}
+
+/* -------- header / nav (all pages) -------- */
+
+header {
+    background: var(--color-overlay);
+    border-bottom: 2px solid var(--color-accent);
+}
+
+.main-menu ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 18px 20px;
+}
+
+.main-menu a {
+    color: var(--color-text);
+    text-decoration: none;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    transition: .2s;
+}
+
+.main-menu a:hover {
+    color: var(--color-accent);
+}
+
+/* make the "Brennan Projects" home link read as the logo/centerpiece */
+.main-menu li:nth-child(3) a {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--color-accent);
+}
+
+/* -------- shared main content wrapper -------- */
+
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+main h1 {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    letter-spacing: 2px;
+    color: var(--color-accent);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* -------- footer (all pages) -------- */
+
+footer {
+    display: flex;
+    justify-content: center;
+    padding: 30px 0;
+    background: var(--color-overlay);
+}
+
+/* Socials */
+
+.socials {
+    margin-top: 18px;
+    display: flex;
+    gap: 18px;
+}
+
+.socials button {
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 50%;
+    background: var(--color-accent);
+    cursor: pointer;
+    transition: .2s;
+}
+
+.socials button:hover {
+    transform: translateY(-3px);
+    background: var(--color-accent-hover);
+}
+
+.socials a {
+    color: var(--color-text);
+    text-decoration: none;
+    font-size: 1.4rem;
+}
+
+/* -------- home page -------- */
+
+.banner-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+    border: 2px solid var(--color-accent);
+    margin-bottom: 50px;
+}
+
+.history {
+    max-width: 700px;
+    margin: 0 auto 60px;
+    padding: 30px;
+    text-align: center;
+    background: var(--color-overlay);
+    border: 2px solid var(--color-accent);
+}
+
+.history p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.intro {
+    text-align: center;
+}
+
+.intro > p {
+    max-width: 700px;
+    margin: 0 auto 30px;
+    line-height: 1.6;
+}
+
+.intro ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 24px;
+}
+
+.intro li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 30px 20px;
+    background: var(--color-overlay);
+    border: 2px solid var(--color-accent);
+    font-weight: bold;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: .25s;
+}
+
+.intro li:hover {
+    background: var(--color-accent-hover);
+}
+
+.intro li img {
+    width: 100%;
+    max-width: 160px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border: 2px solid var(--color-accent);
+}
+
+/* -------- landing page -------- */
+
+.landing-page {
+    min-height: 100vh;
+    background:
+        linear-gradient(var(--color-overlay-strong), var(--color-overlay-strong)),
+        url("../img/tree.bmp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-header {
+    margin-top: 45px;
+    font-size: clamp(3rem, 6vw, 6rem);
+    background: var(--color-overlay);
+    color: var(--color-accent);
+    letter-spacing: 2px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.main-text {
+    margin-top: 250px;
+    width: min(700px, 85%);
+    padding: 40px;
+    text-align: center;
+    color: var(--color-text);
+    background: var(--color-overlay);
+    border: 2px solid var(--color-accent);
+}
+
+.main-text p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+.main-text p + p {
+    margin-top: 30px;
+}
+
+.enter-button {
+    margin-top: 10px;
+    padding: 12px 24px;
+    background: var(--color-accent);
+    color: var(--color-text);
+    border: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-family: inherit;
+    cursor: pointer;
+    transition: .25s;
+}
+
+.enter-button a {
+    color: var(--color-text);
+    text-decoration: none;
+}
+
+.enter-button:hover {
+    background: var(--color-accent-hover);
+}
+
+/* -------- music page -------- */
+
+/* -------- plays page -------- */
+
+/* -------- words page -------- */
+
+/* -------- media page -------- */
