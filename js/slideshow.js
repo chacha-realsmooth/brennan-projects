@@ -2,7 +2,7 @@
 // Change this to whatever passcode you want gatekeeping edits.
 // Remember: this is visible to anyone who views the page source,
 // so treat it as a "keep honest people honest" lock, not real security.
-const EDIT_CODE = "letmein";
+const EDIT_CODE = "DameTrixieBouffant";
 
 const STORAGE_KEY = "gallery-images";
 
