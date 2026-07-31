@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Home - Brennan Projects</title>
+    <title>Media - Brennan Projects</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="css/style.css">
     <script src="js/functions.js"></script>
@@ -21,30 +21,64 @@
             </ul>
         </nav>
     </header>
-    <main>
-        <div class="home-page">
-            <img class="banner-img" src="img/headphones.png" alt="Banner Image" width="1400" height="600">
-            <section class="history">
-                <h1>ABOUT US / HISTORY</h1>
-                <p>about them! history of how they got started etc. this is one paragraph and would be centered on the page</p>
-            </section>
+    <main class="media-page">
+        <section class="calendar-live">
+        </section>
 
-            <section class="intro">
-                <h1>INTRO</h1>
-                <p>introduction to website - list off tasters for each section with an image teasing the section along side the heading</p>
-                <ul>
-                    <li><a href="music.html">MUSIC</a></li>
-                    <li><a href="plays.html">PLAYS & STUFF</a></li>
-                    <li><a href="words.html">WORDS</a></li>
-                    <li><a href="media.html">PHOTOS & VIDS</a></li>
-                </ul>
-            </section>
+        <section class="children-in-need">
+        </section>
+
+        <section class="gallery">
+            <header class="gallery-header">
+                <span class="eyebrow">Slide <span id="currentIndex">1</span> / <span id="totalCount">1</span></span>
+                <button id="editBtn" class="edit-btn">Edit gallery</button>
+            </header>
+
+            <div class="stage">
+                <button id="prevBtn" class="nav-arrow nav-arrow--prev" aria-label="Previous image">&#10094;</button>
+
+                <div class="frame">
+                    <img id="slideImage" src="" alt="Gallery image" />
+                    <p id="emptyState" class="empty-state">No images yet. Unlock editing to add some.</p>
+                    <button id="deleteBtn" class="delete-btn" hidden>Remove this image</button>
+                </div>
+
+                <button id="nextBtn" class="nav-arrow nav-arrow--next" aria-label="Next image">&#10095;</button>
+            </div>
+
+            <div id="dots" class="dots"></div>
+
+            <div id="uploadPanel" class="upload-panel" hidden>
+                <label for="fileInput" class="upload-label">
+                    <span>Add images</span>
+                    <input type="file" id="fileInput" accept="image/*" multiple hidden>
+                </label>
+                <button id="lockBtn" class="lock-btn">Lock editing</button>
+            </div>
         </div>
+
+        <!-- Passcode modal -->
+        <div id="modalOverlay" class="modal-overlay" hidden>
+            <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+                <h2 id="modalTitle">Enter edit code</h2>
+                <p class="modal-sub">Enter the passcode to add or remove images.</p>
+                <input type="password" id="codeInput" class="code-input" placeholder="Passcode" autocomplete="off">
+                <p id="codeError" class="code-error" hidden>Incorrect code, try again.</p>
+                <div class="modal-actions">
+                    <button id="cancelBtn" class="btn btn--ghost">Cancel</button>
+                    <button id="submitCodeBtn" class="btn btn--primary">Unlock</button>
+                </div>
+            </div>
+        </section>
+
+        <script src="js/slideshow.js"></script>
     </main>
     <footer>
         <div class="socials">
-            <button><a href="https://open.spotify.com/artist/60cqCaV7CsBIbVvu23KjKi?si=qxHJ70bsRy23CakNJ46DcA"><i class="fab fa-spotify"></i></a></button>
-            <button><a href="https://youtube.com/channel/UCuj8jt20GqYR8qhkUpVBocQ?si=c8iBtrAI2XR-oI_4"><i class="fab fa-youtube"></i></a></button>
+            <button><a href="https://open.spotify.com/artist/60cqCaV7CsBIbVvu23KjKi?si=qxHJ70bsRy23CakNJ46DcA"><i
+                        class="fab fa-spotify"></i></a></button>
+            <button><a href="https://youtube.com/channel/UCuj8jt20GqYR8qhkUpVBocQ?si=c8iBtrAI2XR-oI_4"><i
+                        class="fab fa-youtube"></i></a></button>
         </div>
     </footer>
 </body>
